@@ -1,0 +1,12 @@
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\SecureFTP.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\SecureFTP.pdb
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\Microsoft.SqlServer.ManagedDTS.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.csproj.AssemblyReference.cache
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.csproj.CoreCompileInputs.cache
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.csproj.CopyComplete
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.pdb
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\Microsoft.SqlServer.Dts.Design.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\WinSCPnet.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.Resource1.resources
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.csproj.GenerateResource.cache
