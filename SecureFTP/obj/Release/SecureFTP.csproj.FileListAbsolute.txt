@@ -10,3 +10,5 @@ C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\Microsoft.SqlServer.
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\WinSCPnet.dll
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.Resource1.resources
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.csproj.GenerateResource.cache
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Release\Microsoft.DataTransformationServices.Controls.DLL
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Release\SecureFTP.GeneralView.resources

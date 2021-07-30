@@ -6,11 +6,11 @@ using Microsoft.SqlServer.Dts.Runtime;
 using System.Diagnostics.CodeAnalysis;
 using WinSCP;
 
-[assembly: CLSCompliant(true)]
+//[assembly: CLSCompliant(true)]
 
 namespace SecureFTP
 {
-    [DtsTaskAttribute(Description = "version 3", DisplayName = "SFTP-Task", IconResource = "SecureFTP.Resources.safe.ico")]
+    [DtsTaskAttribute(Description = "version 8", DisplayName = "SFTP-Task", IconResource = "SecureFTP.Resources.safe.ico", UITypeName = "UI, SecureFtpUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6bd801710a5867a")]
 
     public class SFTP : Task
     { 
@@ -41,6 +41,8 @@ namespace SecureFTP
     public String FtpLocalPath { get; set; }
     public String FtpRemotePath { get; set; }
     public Boolean FtpRemove { get; set; }
+
+        public string DisplayText = "Hello World Test UI";
 
     public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
     {
