@@ -5,34 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace SecureFtp
+namespace SFTPUI
 {
-    public class UI : IDtsTaskUI
+    public class SFTPUI : IDtsTaskUI
     {
-        private TaskHost _taskHost = null;
-        private IDtsConnectionService _connectionService = null;
+        private TaskHost taskHostValue;
 
         public void Delete(System.Windows.Forms.IWin32Window parentWindow)
         {
-           
+
         }
 
-        public ContainerControl GetView()
+        public System.Windows.Forms.ContainerControl GetView()
         {
-            return new SecureFTP.SFTPMainWindow(_taskHost, _connectionService);
+            return new MainForm(taskHostValue);
         }
 
         public void Initialize(TaskHost taskHost, IServiceProvider serviceProvider)
         {
-            this._taskHost = taskHost;
-            this._connectionService = serviceProvider.GetService(typeof(IDtsConnectionService)) as IDtsConnectionService;
+            taskHostValue = taskHost;
         }
 
         public void New(System.Windows.Forms.IWin32Window parentWindow)
         {
-            
+
         }
     }
 }

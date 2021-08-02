@@ -1,0 +1,9 @@
+C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Tasks\SFTPUI.dll
+C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Tasks\SFTPUI.pdb
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.AssemblyReference.cache
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.CoreCompileInputs.cache
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.dll
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.pdb
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.MainForm.resources
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.GenerateResource.cache
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.CopyComplete
