@@ -10,7 +10,7 @@ using WinSCP;
 //4f5f127b6230f83d "
 namespace SecureFTP
 {
-    [DtsTaskAttribute(Description = "version 9", DisplayName = "SFTP-Task", IconResource = "SecureFTP.Resources.safe.ico", UITypeName = "SFTPUI.SFTPUI, SFTPUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b1d51301f4df9efc")]
+    [DtsTaskAttribute(Description = "version 9", DisplayName = "SFTP-Task", IconResource = "SecureFTP.Resources.ftp.ico", UITypeName = "SFTPUI.SFTPUI, SFTPUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b1d51301f4df9efc")]
 
     public class SFTP : Task
     { 
@@ -31,18 +31,18 @@ namespace SecureFTP
     private const String EXCEPTION_MESSAGE_PATTERN = "An error has occurred:\r\n\r\n{0}";
     private const String UNKNOWN_EXCEPTION_MESSAGE = "(No other information available.)";
 
-    public String FtpProtocolName { get; set; }
-    public String FtpHostName { get; set; }
-    public Int32 FtpPortNumber { get; set; }
-    public String FtpUserName { get; set; }
-    public String FtpPassword { get; set; }
-    public String FtpSshHostKeyFingerprint { get; set; }
-    public String FtpOperationName { get; set; }
-    public String FtpLocalPath { get; set; }
-    public String FtpRemotePath { get; set; }
-    public Boolean FtpRemove { get; set; }
+        public String FtpProtocolName { get; set; } = "";
+        public String FtpHostName { get; set; } = "";
+        public Int32 FtpPortNumber { get; set; } = 0;
+        public String FtpUserName { get; set; } = "";
+        public String FtpPassword { get; set; } = "";
+        public String FtpSshHostKeyFingerprint { get; set; } = "";
+        public String FtpOperationName { get; set; } = "";
+        public String FtpLocalPath { get; set; } = "";
+        public String FtpRemotePath { get; set; } = "";
+        public Boolean FtpRemove { get; set; } = false;
 
-    public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
+        public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
     {
         Boolean fireAgain = false;
 
