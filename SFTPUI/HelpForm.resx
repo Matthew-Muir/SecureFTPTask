@@ -117,6 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>File Name: When specifying which file/s you want to move. You have
+the ability to use file masks/expressions to perform more
+complex transfer scenarios.
+
+Examples...
+
+* Matches any number (including zero) of arbitrary characters.
+*.doc (Will transfer all files with a doc exstension)
+
+? Matches exactly one arbitrary character.
+photo????.png
+
+[abc] Matches one character from set
+index_[abc].html
+
+[a-z] Matches one charcter from the range
+index_[a-z].html
+
+For a more examples and a through explination of this feature check out the link below.
+https://winscp.net/eng/docs/file_mask
+
+Local Path: This path uses a backslash \
+Remote Path: This path uses a forward slash /</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -31,15 +31,15 @@ namespace SecureFTP
     private const String EXCEPTION_MESSAGE_PATTERN = "An error has occurred:\r\n\r\n{0}";
     private const String UNKNOWN_EXCEPTION_MESSAGE = "(No other information available.)";
 
-        public String FtpProtocolName { get; set; } = "";
+        public String FtpProtocolName { get; } = "Sftp";
         public String FtpHostName { get; set; } = "";
-        public Int32 FtpPortNumber { get; set; } = 0;
+        public Int32 FtpPortNumber { get; set; } = 22;
         public String FtpUserName { get; set; } = "";
         public String FtpPassword { get; set; } = "";
         public String FtpSshHostKeyFingerprint { get; set; } = "";
-        public String FtpOperationName { get; set; } = "";
+        public String FtpOperationName { get; set; } = "PutFiles";
         public String FtpLocalPath { get; set; } = "";
-        public String FtpRemotePath { get; set; } = "";
+        public String FtpRemotePath { get; set; } = "/";
         public Boolean FtpRemove { get; set; } = false;
 
         public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)

@@ -7,3 +7,4 @@ C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.pdb
 C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.MainForm.resources
 C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.GenerateResource.cache
 C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.csproj.CopyComplete
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\obj\Release\SFTPUI.HelpForm.resources
