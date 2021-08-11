@@ -10,7 +10,7 @@ using WinSCP;
 //4f5f127b6230f83d "
 namespace SecureFTP
 {
-    [DtsTaskAttribute(Description = "version 9", DisplayName = "SFTP-Task", IconResource = "SecureFTP.Resources.ftp.ico", UITypeName = "SFTPUI.SFTPUI, SFTPUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b1d51301f4df9efc")]
+    [DtsTaskAttribute(Description = "Task that can upload and download files via SFTP to a server", DisplayName = "SFTP Task", IconResource = "SecureFTP.Resources.ftp.ico", UITypeName = "SFTPUI.SFTPUI, SFTPUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b1d51301f4df9efc")]
 
     public class SFTP : Task
     { 

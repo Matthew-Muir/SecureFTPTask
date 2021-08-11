@@ -23,7 +23,7 @@ namespace SFTPUI
             comboBox1.SelectedIndex = comboBox1.FindStringExact(taskHost.Properties["FtpRemove"].GetValue(taskHost).ToString());
             comboBox2.SelectedIndex = comboBox2.FindStringExact(taskHost.Properties["FtpOperationName"].GetValue(taskHost).ToString());
             textBox2.Text = taskHost.Properties["FtpHostName"].GetValue(taskHost).ToString();
-            textBox3.Text = taskHost.Properties["FtpPortNumber"].GetValue(taskHost).ToString();
+            numericUpDown1.Value = Int32.Parse(taskHost.Properties["FtpPortNumber"].GetValue(taskHost).ToString());
             textBox4.Text = taskHost.Properties["FtpUserName"].GetValue(taskHost).ToString();
             textBox5.Text = taskHost.Properties["FtpPassword"].GetValue(taskHost).ToString();
             textBox6.Text = taskHost.Properties["FtpSshHostKeyFingerprint"].GetValue(taskHost).ToString();
@@ -34,7 +34,7 @@ namespace SFTPUI
             #region Populate_Tooltips
 
 
-            toolTip2.SetToolTip(label2, "localhost or address E.G. ftp.example.com");
+            toolTip2.SetToolTip(label2, "Ip address or URL ftp.example.com");
             toolTip3.SetToolTip(label3, "SFTP default port number is 22");
             toolTip4.SetToolTip(label4, "Login credential to access server");
             toolTip5.SetToolTip(label5, "Login credential to access server");
@@ -55,7 +55,7 @@ namespace SFTPUI
 
             
             taskHost.Properties["FtpHostName"].SetValue(taskHost, textBox2.Text);
-            taskHost.Properties["FtpPortNumber"].SetValue(taskHost, Int32.Parse(textBox3.Text));
+            taskHost.Properties["FtpPortNumber"].SetValue(taskHost, numericUpDown1.Value);
             taskHost.Properties["FtpUserName"].SetValue(taskHost, textBox4.Text);
             taskHost.Properties["FtpPassword"].SetValue(taskHost, textBox5.Text);
             taskHost.Properties["FtpSshHostKeyFingerprint"].SetValue(taskHost, textBox6.Text);
