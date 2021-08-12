@@ -64,7 +64,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WinSCPnet, Version=1.8.3.11552, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\WinSCPnet\v4.0_1.8.3.11552__2271ec4a3c56d0bf\WinSCPnet.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\WinSCP-5.19.2-Automation\WinSCPnet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

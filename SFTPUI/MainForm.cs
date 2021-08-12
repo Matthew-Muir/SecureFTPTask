@@ -55,7 +55,7 @@ namespace SFTPUI
 
             
             taskHost.Properties["FtpHostName"].SetValue(taskHost, textBox2.Text);
-            taskHost.Properties["FtpPortNumber"].SetValue(taskHost, numericUpDown1.Value);
+            taskHost.Properties["FtpPortNumber"].SetValue(taskHost, (int)numericUpDown1.Value);
             taskHost.Properties["FtpUserName"].SetValue(taskHost, textBox4.Text);
             taskHost.Properties["FtpPassword"].SetValue(taskHost, textBox5.Text);
             taskHost.Properties["FtpSshHostKeyFingerprint"].SetValue(taskHost, textBox6.Text);
