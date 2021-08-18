@@ -6,3 +6,11 @@ C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.CoreC
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.CopyComplete
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.dll
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.pdb
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\WinSCP.exe
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\Microsoft.DataTransformationServices.Controls.DLL
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\Microsoft.SqlServer.Dts.Design.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\WinSCPnet.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.Resource1.resources
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.GenerateResource.cache

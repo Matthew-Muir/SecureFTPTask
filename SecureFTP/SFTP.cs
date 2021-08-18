@@ -41,6 +41,8 @@ namespace SecureFTP
         public String FtpLocalPath { get; set; } = "";
         public String FtpRemotePath { get; set; } = "/";
         public Boolean FtpRemove { get; set; } = false;
+        public String FtpLogPath { get; set; } = @"C:\";
+        public String FtpLogPathExstension { get; } = "\\SFTPlog_" + DateTime.Now.ToString("yyyyMMDD") + ".txt";
 
         public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
     {
@@ -108,11 +110,15 @@ namespace SecureFTP
             using (Session winScpSession = this.EstablishSession())
             {
                 componentEvents.FireInformation(0, TASK_NAME, SESSION_OPEN_MESSAGE, String.Empty, 0, ref fireAgain);
+                    // Store transfer result
+                    TransferOperationResult transferResult;
+                    // Determine the operation mode.
+                    OperationMode operation = (OperationMode)Enum.Parse(typeof(OperationMode), this.FtpOperationName);
 
-                // Determine the operation mode.
-                OperationMode operation = (OperationMode)Enum.Parse(typeof(OperationMode), this.FtpOperationName);
                 switch (operation)
                 {
+                        
+
                     case OperationMode.PutFiles:
                         // When uploading files, make sure that the destination directory exists.
                         Boolean remoteDirectoryExists = winScpSession.FileExists(this.FtpRemotePath);
@@ -121,14 +127,15 @@ namespace SecureFTP
                             winScpSession.CreateDirectory(this.FtpRemotePath);
                             componentEvents.FireInformation(0, TASK_NAME, String.Format(REMOTE_DIRECTORY_CREATED_MESSAGE_PATTERN, this.FtpRemotePath), String.Empty, 0, ref fireAgain);
                         }
-                        winScpSession.PutFiles(this.FtpLocalPath, this.FtpRemotePath, this.FtpRemove);
+                        transferResult = winScpSession.PutFiles(this.FtpLocalPath, this.FtpRemotePath, this.FtpRemove);
                         break;
                     case OperationMode.GetFiles:
                     default:
-                        winScpSession.GetFiles(this.FtpRemotePath, this.FtpLocalPath, this.FtpRemove);
+                        transferResult = winScpSession.GetFiles(this.FtpRemotePath, this.FtpLocalPath, this.FtpRemove);
                         break;
                 }
-
+                    //If transfer failed. This will throw an exception.
+                    transferResult.Check();
                 return DTSExecResult.Success;
             }
         }
@@ -155,6 +162,12 @@ namespace SecureFTP
             Password = this.FtpPassword,
             SshHostKeyFingerprint = this.FtpSshHostKeyFingerprint
         };
+
+            //Location to store session log
+            if (!String.IsNullOrEmpty(FtpLogPath))
+            {
+                winScpSession.SessionLogPath = FtpLogPath + FtpLogPathExstension;
+            }
 
         winScpSession.Open(winScpSessionOptions);
 

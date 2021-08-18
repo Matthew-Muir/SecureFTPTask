@@ -1,0 +1,11 @@
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\WinSCP.exe
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\TestCenter.exe.config
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\TestCenter.exe
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\TestCenter.pdb
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\LogFileLibrary.dll
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Release\LogFileLibrary.pdb
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Release\TestCenter.csproj.AssemblyReference.cache
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Release\TestCenter.csproj.CoreCompileInputs.cache
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Release\TestCenter.csproj.CopyComplete
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Release\TestCenter.exe
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Release\TestCenter.pdb

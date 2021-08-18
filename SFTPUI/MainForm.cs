@@ -29,6 +29,7 @@ namespace SFTPUI
             textBox6.Text = taskHost.Properties["FtpSshHostKeyFingerprint"].GetValue(taskHost).ToString();
             textBox8.Text = taskHost.Properties["FtpLocalPath"].GetValue(taskHost).ToString();
             textBox9.Text = taskHost.Properties["FtpRemotePath"].GetValue(taskHost).ToString();
+            textBox1.Text = taskHost.Properties["FtpLogPath"].GetValue(taskHost).ToString();
             #endregion
 
             #region Populate_Tooltips
@@ -43,13 +44,14 @@ namespace SFTPUI
             toolTip8.SetToolTip(label8, "File location on local machine.\nE.G. C:\\folder\\myfile.txt\nThis field can accept wild card expression.\nRead help for more details.");
             toolTip9.SetToolTip(label9, "Path to destination on server\nE.G. / to access root \n/myfolder/ to access a particular directory");
             toolTip10.SetToolTip(label10, "Delete source files/directory after transfer?");
+            toolTip11.SetToolTip(label1, "Output path for log files. Leave blank to turn off logging");
 
             #endregion
 
 
         }
 
-   
+        //Done button - Update taskHost values
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -63,7 +65,7 @@ namespace SFTPUI
             taskHost.Properties["FtpLocalPath"].SetValue(taskHost, textBox8.Text);
             taskHost.Properties["FtpRemotePath"].SetValue(taskHost, textBox9.Text);
             taskHost.Properties["FtpRemove"].SetValue(taskHost, Boolean.Parse(comboBox1.Text));
-           
+            taskHost.Properties["FtpLogPath"].SetValue(taskHost, textBox1.Text);
             
         }
 
@@ -91,6 +93,16 @@ namespace SFTPUI
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox8.Text = openFileDialog1.FileName;
+            }
+        }
+
+        //Browse button for selecting log path
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() ==  DialogResult.OK)
+            {
+                textBox1.Text = folderBrowser.SelectedPath;
             }
         }
     }

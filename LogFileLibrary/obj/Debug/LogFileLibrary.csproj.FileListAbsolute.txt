@@ -1,0 +1,12 @@
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\WinSCP.exe
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\LogFileLibrary.dll
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\LogFileLibrary.pdb
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\SecureFTP.dll
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\WinSCPnet.dll
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\bin\Debug\SecureFTP.pdb
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\obj\Debug\LogFileLibrary.csproj.AssemblyReference.cache
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\obj\Debug\LogFileLibrary.csproj.CoreCompileInputs.cache
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\obj\Debug\LogFileLibrary.csproj.CopyComplete
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\obj\Debug\LogFileLibrary.dll
+C:\Users\mattm\source\repos\SecureFTP\LogFileLibrary\obj\Debug\LogFileLibrary.pdb
