@@ -8,3 +8,4 @@ C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.csproj.Cor
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.csproj.CopyComplete
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.exe
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.pdb
+C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\WinSCP.exe

@@ -15,7 +15,8 @@ namespace LogFileLibrary
     public enum Protocol
     {
         Sftp,
-        Ftps
+        Ftps,
+        Ftp
     }
 
     public enum TransferResult
