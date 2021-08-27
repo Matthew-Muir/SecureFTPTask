@@ -14,9 +14,10 @@ namespace LogFileLibrary
         //append to bottom of the file a break
         public static void AppendToEnd(string path, string text)
         {
+            
             using (StreamWriter sw = File.AppendText(path))
             {
-                sw.WriteLine(text);
+                sw.Write(text);
             }
             
         }

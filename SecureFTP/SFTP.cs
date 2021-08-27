@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.SqlServer.Dts.Runtime;
 using System.Diagnostics.CodeAnalysis;
 using WinSCP;
+using LogFileLibrary;
 
 //public key 4f5f127b6230f83d
 //4f5f127b6230f83d "
@@ -42,7 +43,7 @@ namespace SecureFTP
         public String FtpRemotePath { get; set; } = "/";
         public Boolean FtpRemove { get; set; } = false;
         public String FtpLogPath { get; set; } = @"C:\";
-        public String FtpLogPathExstension { get; } = "\\SFTPlog_" + DateTime.Now.ToString("yyyyMMDD") + ".txt";
+
 
         public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
     {
@@ -151,7 +152,7 @@ namespace SecureFTP
     {
         Session winScpSession = new Session();
 
-        Protocol ftpProtocol = (Protocol)Enum.Parse(typeof(Protocol), this.FtpProtocolName);
+        WinSCP.Protocol ftpProtocol = (WinSCP.Protocol)Enum.Parse(typeof(WinSCP.Protocol), this.FtpProtocolName);
 
         SessionOptions winScpSessionOptions = new SessionOptions
         {
@@ -166,7 +167,8 @@ namespace SecureFTP
             //Location to store session log
             if (!String.IsNullOrEmpty(FtpLogPath))
             {
-                winScpSession.SessionLogPath = FtpLogPath + FtpLogPathExstension;
+                winScpSession.SessionLogPath = FtpLogPath + CreateFlogFile.CurrentLogName(FtpLogPath);
+                //LEFT OFF HERE
             }
 
         winScpSession.Open(winScpSessionOptions);

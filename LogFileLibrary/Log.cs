@@ -19,7 +19,7 @@ namespace LogFileLibrary
 
         public Log(XPathNavigator nav)
         {
-            this.Dts = nav.SelectSingleNode("/session/@start").Value;
+            this.Dts = nav.SelectSingleNode("/session/@start").Value.Substring(0,19);
             this.TransferType = DetermineTransferType(nav);
             this.Protocol = DetermineTransferProtocol(nav);
             this.FileName = ExtractFileName(nav);

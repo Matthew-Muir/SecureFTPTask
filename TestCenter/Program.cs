@@ -17,10 +17,9 @@ namespace TestCenter
         {
             string logPath = @"C:\quick\";
             string xmlLogName = "xmllog.xml";
-            var str = @"C:\quick\xmllog.xml";
-            var outLog = @"C:\quick\Flog.txt";
 
-            var xmlLogExists = File.Exists(str + xmlLogName);
+
+            var xmlLogExists = File.Exists(logPath + xmlLogName);
             var fLogExists = File.Exists(CreateFlogFile.CurrentLogName(logPath));
 
             //If the formatted log doesn't exist. Then create it.
@@ -32,22 +31,10 @@ namespace TestCenter
             //If the WinSCP log exists. Then proceed with XML information extraction and writing to F-log.
             if (xmlLogExists)
             {
-                //LEFT OFF HERE 
+                Log log = new Log(PrepXMLFile.ReturnNav(logPath + xmlLogName));
+                UpdateRecord.AppendToEnd(CreateFlogFile.CurrentLogName(logPath), log.ToString());
+                File.Delete(logPath + xmlLogName);
             }
-
-            
-
-            XmlnsRemove.Remove(str);
-
-
-
-
-            XPathDocument docNav = new XPathDocument(str);
-            XPathNavigator nav = docNav.CreateNavigator();
-
-            var log = new Log(nav);
-
-            UpdateRecord.AppendToEnd(outLog, log.ToString());
 
             
             Console.ReadKey();

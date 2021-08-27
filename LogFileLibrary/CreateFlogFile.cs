@@ -12,7 +12,8 @@ namespace LogFileLibrary
         public static void Create(string path)
         {
             var fullPath = path + "FTP_Log_" + DateTime.Now.ToString("yyyyMM") + ".txt";
-            File.Create(fullPath);
+            using (File.Create(fullPath))
+            { }
             UpdateRecord.AppendToEnd(fullPath, ProvideColumnNamesAndStruc());
         }
 
@@ -23,7 +24,7 @@ namespace LogFileLibrary
 
         private static string ProvideColumnNamesAndStruc()
         {
-            return "DTS|TransferType|Protocol|Filename|Destination|Result";
+            return "DTS|TransferType|Protocol|Filename|Destination|Result\r\n";
         }
     }
 }

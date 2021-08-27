@@ -24,4 +24,10 @@ namespace LogFileLibrary
         Success,
         Failure
     }
+
+    public enum LogFileType
+    {
+        Custom,
+        Standard
+    }
 }

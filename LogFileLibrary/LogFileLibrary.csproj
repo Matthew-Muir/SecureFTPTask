@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>LogFileSNK.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateFlogFile.cs" />
-    <Compile Include="GetTransferType.cs" />
+    <Compile Include="PrepXMLFile.cs" />
     <Compile Include="UpdateRecord.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Log.cs" />
@@ -54,6 +60,9 @@
       <Project>{b5c4c12c-b2c2-4416-bc99-f18cd293bc60}</Project>
       <Name>SecureFTP</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogFileSNK.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
