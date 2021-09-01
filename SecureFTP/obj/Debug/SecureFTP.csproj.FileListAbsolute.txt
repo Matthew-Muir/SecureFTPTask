@@ -1,7 +1,6 @@
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\SecureFTP.dll
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\SecureFTP.pdb
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
-C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.AssemblyReference.cache
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.CoreCompileInputs.cache
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.CopyComplete
 C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.dll
