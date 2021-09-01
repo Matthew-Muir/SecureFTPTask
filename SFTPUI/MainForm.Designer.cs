@@ -356,6 +356,12 @@ namespace SFTPUI
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // toolTip11
+            // 
+            this.toolTip11.AutoPopDelay = 10000;
+            this.toolTip11.InitialDelay = 500;
+            this.toolTip11.ReshowDelay = 100;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

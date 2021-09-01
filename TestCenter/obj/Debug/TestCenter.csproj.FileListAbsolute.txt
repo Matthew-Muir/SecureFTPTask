@@ -1,10 +1,7 @@
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\TestCenter.exe.config
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\TestCenter.exe
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\TestCenter.pdb
-C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\LogFileLibrary.dll
-C:\Users\mattm\source\repos\SecureFTP\TestCenter\bin\Debug\LogFileLibrary.pdb
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.csproj.AssemblyReference.cache
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.csproj.CoreCompileInputs.cache
-C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.csproj.CopyComplete
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.exe
 C:\Users\mattm\source\repos\SecureFTP\TestCenter\obj\Debug\TestCenter.pdb

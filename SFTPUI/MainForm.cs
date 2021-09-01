@@ -41,7 +41,7 @@ namespace SFTPUI
             toolTip5.SetToolTip(label5, "Login credential to access server");
             toolTip6.SetToolTip(label6, "This credential should be provided to you by server the admin.\nElse connect to server via WinSCP app and obtain credential from Session->Server/Protocol Info");
             toolTip7.SetToolTip(label7, "GetFiles (download files from server)\nPutFiles (Upload files to server)");
-            toolTip8.SetToolTip(label8, "File location on local machine.\nE.G. C:\\folder\\myfile.txt\nThis field can accept wild card expression.\nRead help for more details.");
+            toolTip8.SetToolTip(label8, "File location on local machine.\nE.G. C:\\folder\\myfile.txt\nOr Transfer an entire directory E.G. C:\\folder\nThis field can accept wild card expression.\nRead help for more details.");
             toolTip9.SetToolTip(label9, "Path to destination on server\nE.G. / to access root \n/myfolder/ to access a particular directory");
             toolTip10.SetToolTip(label10, "Delete source files/directory after transfer?");
             toolTip11.SetToolTip(label1, "Output path for log files. Leave blank to turn off logging");
@@ -102,7 +102,7 @@ namespace SFTPUI
             var folderBrowser = new FolderBrowserDialog();
             if (folderBrowser.ShowDialog() ==  DialogResult.OK)
             {
-                textBox1.Text = folderBrowser.SelectedPath;
+                textBox1.Text = folderBrowser.SelectedPath + "\\";
             }
         }
     }
