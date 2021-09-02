@@ -147,7 +147,9 @@ namespace SecureFTP
                     }
 
                     //If transfer failed. This will throw an exception.
+
                     transferResult.Check();
+                    winScpSession.Close();
 
                 }
 
@@ -197,11 +199,7 @@ namespace SecureFTP
             };
 
 
-
             winScpSession.Open(winScpSessionOptions);
-
-
-
 
             return winScpSession;
         }

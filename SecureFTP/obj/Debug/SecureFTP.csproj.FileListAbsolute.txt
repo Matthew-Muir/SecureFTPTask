@@ -16,3 +16,4 @@ C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.Gener
 C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Tasks\WinSCP.exe
 C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Tasks\SecureFTP.dll
 C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Tasks\SecureFTP.pdb
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\obj\Debug\SecureFTP.csproj.AssemblyReference.cache
