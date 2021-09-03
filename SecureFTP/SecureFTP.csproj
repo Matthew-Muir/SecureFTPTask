@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Get Latest File\GetLatestFile.cs" />
     <Compile Include="Log File Classes\CreateFlogFile.cs" />
     <Compile Include="Log File Classes\Enums.cs" />
     <Compile Include="Log File Classes\GenerateLogEntries.cs" />

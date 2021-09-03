@@ -135,7 +135,13 @@ namespace SecureFTP
                                 winScpSession.CreateDirectory(this.FtpRemotePath);
                                 componentEvents.FireInformation(0, TASK_NAME, String.Format(REMOTE_DIRECTORY_CREATED_MESSAGE_PATTERN, this.FtpRemotePath), String.Empty, 0, ref fireAgain);
                             }
-                            //Handle logging of session transfer
+
+                            //If FtpLocalPath contains L@TEST then get most recently written file.
+                            if (FtpLocalPath.Contains("L@TEST"))
+                            {
+                                FtpLocalPath = Get_Latest_File.GetLatestFile.ReturnMostRecentWrittenFile(FtpLocalPath);
+                            }
+
 
                             transferResult = winScpSession.PutFiles(this.FtpLocalPath, this.FtpRemotePath, this.FtpRemove);
                             break;
@@ -179,7 +185,7 @@ namespace SecureFTP
             {
                 //Create the standard log.
                 winScpSession.SessionLogPath = CreateFlogFile.CurrentStandardLogName(FtpLogPath);
-                // Create the xml log that is referrenced in the formatted log.
+                // Create the xml log that is referenced in the formatted log.
                 winScpSession.XmlLogPath = FtpLogPath + XML_LOG_NAME;
                 winScpSession.XmlLogPreserve = true;
             }
