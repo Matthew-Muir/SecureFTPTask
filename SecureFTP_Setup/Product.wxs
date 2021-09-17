@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+			 Name="SecureFTP_Setup"
+			 Language="1033"
+			 Version="1.0.0.0"
+			 Manufacturer="LCPUD"
+			 UpgradeCode="f7cd68d1-f745-4200-a1dd-2d3428d55c9d">
+		
+		<Package InstallerVersion="200"
+				 Compressed="yes"
+				 InstallScope="perMachine"
+				 InstallPrivileges="elevated"
+				 AdminImage="yes" />
+
+		<!-- Add a property for the custom task installation folder -->
+		<Property Id="SSISTASKINSTALLFOLDER" Value="SSISINSTALLFOLDER" />
+
+		<Property Id="SSISFOLDER" Value="C:\Program Files (x86)\Microsoft SQL Server\120">
+			<!-- Search the registry for 32-bit and 64-bit SQL Server folder locations -->
+			<!-- By far, this is the trickiest part of the WiX configuration,
+            trying to find a registry value that is accurate and works.
+           The HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\140\VerSpecificRootDir
+            entry works on Windows Server 2016. Yes, it's different for other OS's. -->
+			<RegistrySearch Id="SSISFOLDER_REG_32"
+							Type="directory"
+							Key="SOFTWARE\WOW6432Node\Microsoft\Microsoft SQL Server\120"
+							Name="VerSpecificRootDir"
+							Root="HKLM" Win64="no" />
+		</Property>
+
+		<!-- Set the SSISINSTALLFOLDER to the WiX UI Install Directory -->
+		<SetDirectory Id="SSISINSTALLFOLDER" Sequence="first" Value="[SSISFOLDER]\DTS\Tasks" />
+
+		<!-- Configure a response to newer version detected -->
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+		<!-- Initialize UI -->
+		<UIRef Id="WixUI_Minimal"/>
+		<WixVariable Id="WixUILicenseRtf" Value="SFTPLicense.rtf" />
+
+		<!-- Configure the unit of installation (feature) -->
+		<Feature Id="CustomTask" Title="SecureFTP" Level="1">
+			<ComponentGroupRef Id="CustomSSISTask" />
+		</Feature>
+
+		<!-- Configure WixUI icon -->
+		<Icon Id="ftp.ico" SourceFile="C:\Users\mattm\source\repos\SecureFTP\SecureFTP\Resources\ftp.ico" />
+		<Property Id="ARPPRODUCTICON" Value="ftp.ico" />
+	</Product>
+
+	<!-- Configure folders and folder structure -->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="GAC" Name="GAC" />
+			<Directory Id="SSISINSTALLFOLDER" />
+		</Directory>
+	</Fragment>
+	
+	
+	<Fragment>
+		<ComponentGroup Id="CustomSSISTask">
+			<!-- ExecuteCatalogPackageTask [GAC] -->
+			<Component Id="Tasks_GAC"
+					   Directory="GAC"
+					   Guid="F4B72F57-AE0E-4EEE-8B04-10198ABDC523">
+				<File Id="Task_GAC"
+					  Name="$(var.SecureFTP.TargetFileName)"
+					  Source="$(var.SecureFTP.TargetPath)"
+					  Assembly=".net"
+					  KeyPath="yes"
+					  Checksum="yes" />
+				<RemoveFile Id="Task_GAC"
+							On="uninstall"
+							Name="$(var.SecureFTP.TargetFileName)" />
+			</Component>
+
+			<!-- ExecuteCatalogPackageTask [Tasks] -->
+			<Component Id="Tasks_SSIS"
+					   Directory="SSISINSTALLFOLDER"
+					   Guid="F4B72F57-AE0E-4EEE-8B04-10198ABDC524">
+				<File Id="Task_SSIS"
+					  Name="$(var.SecureFTP.TargetFileName)"
+					  Source="$(var.SecureFTP.TargetPath)"
+					  KeyPath="yes"
+					  Checksum="yes" />
+				<RemoveFile Id="Task_SSIS"
+							On="uninstall"
+							Name="$(var.SecureFTP.TargetFileName)" />
+			</Component>
+
+			<!-- ExecuteCatalogPackageTaskComplexUI [GAC] -->
+			<Component Id="Tasks_UI_GAC"
+					   Directory="GAC"
+					   Guid="F4B72F57-AE0E-4EEE-8B04-10198ABDC525">
+				<File Id="Task_UI_GAC"
+					  Name="$(var.SFTPUI.TargetFileName)"
+					  Source="$(var.SFTPUI.TargetPath)"
+					  Assembly=".net"
+					  KeyPath="yes"
+					  Checksum="yes" />
+				<RemoveFile Id="Task_UI_GAC"
+							On="uninstall"
+							Name="$(var.SFTPUI.TargetFileName)" />
+			</Component>
+
+			<!-- ExecuteCatalogPackageTaskComplexUI [Tasks] -->
+			<Component Id="Tasks_UI_SSIS"
+					   Directory="SSISINSTALLFOLDER"
+					   Guid="F4B72F57-AE0E-4EEE-8B04-10198ABDC526">
+				<File Id="Task_UI_SSIS"
+					  Name="$(var.SFTPUI.TargetFileName)"
+					  Source="$(var.SFTPUI.TargetPath)"
+					  KeyPath="yes"
+					  Checksum="yes" />
+				<RemoveFile Id="Task_UI_SSIS"
+							On="uninstall"
+							Name="$(var.SFTPUI.TargetFileName)" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

@@ -1,0 +1,6 @@
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP_Setup\bin\Debug\SecureFTP_Setup.msi
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP_Setup\bin\Debug\SecureFTP_Setup.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\SecureFTP_Setup.wixproj.BindContentsFileListnull.txt
+obj\Debug\SecureFTP_Setup.wixproj.BindOutputsFileListnull.txt
+obj\Debug\SecureFTP_Setup.wixproj.BindBuiltOutputsFileListnull.txt

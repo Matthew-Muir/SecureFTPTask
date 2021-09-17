@@ -46,8 +46,11 @@ namespace SecureFTP
         public String FtpLocalPath { get; set; } = "";
         public String FtpRemotePath { get; set; } = "/";
         public Boolean FtpRemove { get; set; } = false;
-        public String FtpLogPath { get; set; } = @"C:\";
+        public String FtpLogPath { get; set; } = @"";
+        public String FtpExePath { get; set; } = "";
         #endregion
+
+
 
         public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)
         {
@@ -109,9 +112,12 @@ namespace SecureFTP
             }
         }
 
+
+
         public override DTSExecResult Execute(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log, object transaction)
         {
             Boolean fireAgain = false;
+            
 
             try
             {
@@ -158,7 +164,7 @@ namespace SecureFTP
                     winScpSession.Close();
 
                 }
-
+                //If the transfer goes well. This will create/update the log files.
                 var xmlLogExists = File.Exists(FtpLogPath + XML_LOG_NAME);
                 var fLogExists = File.Exists(CreateFlogFile.CurrentFormattedLogName(FtpLogPath));
                 UpdateRecord.UpdateLogFiles(xmlLogExists, fLogExists, FtpLogPath, XML_LOG_NAME);
@@ -167,6 +173,8 @@ namespace SecureFTP
             }
             catch (Exception exc)
             {
+                MessageBox.Show(exc.Message);
+                //If the transfer reults in an error. This will create/update the log files.
                 var xmlLogExists = File.Exists(FtpLogPath + XML_LOG_NAME);
                 var fLogExists = File.Exists(CreateFlogFile.CurrentFormattedLogName(FtpLogPath));
                 UpdateRecord.UpdateLogFiles(xmlLogExists, fLogExists, FtpLogPath, XML_LOG_NAME);
@@ -204,7 +212,10 @@ namespace SecureFTP
                 SshHostKeyFingerprint = this.FtpSshHostKeyFingerprint
             };
 
-
+            if(String.IsNullOrEmpty(FtpExePath) == false && File.Exists(FtpExePath))
+            {
+                winScpSession.ExecutablePath = FtpExePath;
+            }
             winScpSession.Open(winScpSessionOptions);
 
             return winScpSession;

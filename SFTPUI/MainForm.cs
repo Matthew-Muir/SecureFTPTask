@@ -30,6 +30,7 @@ namespace SFTPUI
             textBox8.Text = taskHost.Properties["FtpLocalPath"].GetValue(taskHost).ToString();
             textBox9.Text = taskHost.Properties["FtpRemotePath"].GetValue(taskHost).ToString();
             textBox1.Text = taskHost.Properties["FtpLogPath"].GetValue(taskHost).ToString();
+            textBox3.Text = taskHost.Properties["FtpExePath"].GetValue(taskHost).ToString();
             #endregion
 
             #region Populate_Tooltips
@@ -41,10 +42,11 @@ namespace SFTPUI
             toolTip5.SetToolTip(label5, "Login credential to access server");
             toolTip6.SetToolTip(label6, "This credential should be provided to you by server the admin.\nElse connect to server via WinSCP app and obtain credential from Session->Server/Protocol Info");
             toolTip7.SetToolTip(label7, "GetFiles (download files from server)\nPutFiles (Upload files to server)");
-            toolTip8.SetToolTip(label8, "File location on local machine.\nE.G. C:\\folder\\myfile.txt\nOr Transfer an entire directory E.G. C:\\folder\nThis field can accept wild card expression.\nRead help for more details.");
+            toolTip8.SetToolTip(label8, "File location on local machine.\nE.G. C:\\folder\\myfile.txt\nAutomatically select the most recently written file in the directory by using L@TEST keyword\nOr Transfer an entire directory E.G. C:\\folder\nThis field can accept wild card expression.\nRead help for more details.");
             toolTip9.SetToolTip(label9, "Path to destination on server\nE.G. / to access root \n/myfolder/ to access a particular directory");
             toolTip10.SetToolTip(label10, "Delete source files/directory after transfer?");
             toolTip11.SetToolTip(label1, "Output path for log files. Leave blank to turn off logging");
+            toolTip12.SetToolTip(label11, "This field is optional.\nIt's value can be set to point to a WinSCP exe");
 
             #endregion
 
@@ -66,6 +68,7 @@ namespace SFTPUI
             taskHost.Properties["FtpRemotePath"].SetValue(taskHost, textBox9.Text);
             taskHost.Properties["FtpRemove"].SetValue(taskHost, Boolean.Parse(comboBox1.Text));
             taskHost.Properties["FtpLogPath"].SetValue(taskHost, textBox1.Text);
+            taskHost.Properties["FtpExePath"].SetValue(taskHost, textBox3.Text);
             
         }
 
@@ -103,6 +106,25 @@ namespace SFTPUI
             if (folderBrowser.ShowDialog() ==  DialogResult.OK)
             {
                 textBox1.Text = folderBrowser.SelectedPath + "\\";
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Select File",
+                CheckFileExists = true,
+                CheckPathExists = true,
+                RestoreDirectory = true,
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox3.Text = openFileDialog1.FileName;
             }
         }
     }

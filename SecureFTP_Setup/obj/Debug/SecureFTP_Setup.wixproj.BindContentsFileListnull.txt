@@ -1,0 +1,4 @@
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\SecureFTP.dll
+C:\Users\mattm\source\repos\SecureFTP\SecureFTP\bin\Debug\SecureFTP.dll
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\bin\Debug\SFTPUI.dll
+C:\Users\mattm\source\repos\SecureFTP\SFTPUI\bin\Debug\SFTPUI.dll
